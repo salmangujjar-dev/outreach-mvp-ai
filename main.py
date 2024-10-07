@@ -51,7 +51,7 @@ class LeadDTO(BaseModel):
     fullName: str
     linkedinUrl: str
     linkedinUsername: str
-    linkedinId: str
+    linkedinId: Optional[str] = None
     twitterUrl: str
     twitterUsername: str
     workEmail: str
@@ -61,7 +61,7 @@ class LeadDTO(BaseModel):
     jobCompanyWebsite: str
     jobCompanyIndustry: str
     jobCompany12moEmployeeGrowthRate: float
-    jobCompanyTotalFundingRaised: float
+    jobCompanyTotalFundingRaised: int
     jobCompanyInferredRevenue: Optional[str] = None
     jobCompanyEmployeeCount: int
     jobLastChanged: str
@@ -77,7 +77,6 @@ class LeadDTO(BaseModel):
     gender: str
     companyEmployees: str
     dataProvider: str
-    __v: int
 
 class EmailRequest(BaseModel):
     lead: LeadDTO
